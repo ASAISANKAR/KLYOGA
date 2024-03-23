@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends 'navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+<form class="form-horizontal" action="{% url 'feedbacksave' %}" method="POST">
+    {% csrf_token %}
+  <fieldset>
+          {% csrf_token %}
+<h1>Feed Back Form</h1>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="name">Name</label>
+      <div class="controls">
+        <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+<br>
+    <div class="control-group">
+      <!-- Student Id -->
+      <label class="control-label" for="studentid">Student Id</label>
+      <div class="controls">
+        <input type="text" id="studentid" name="studentid" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+<br>
+      <br>
+    <div class="control-group">
+      <!-- KL Mail -->
+      <label class="control-label" for="klmail">KL-Mail</label>
+      <div class="controls">
+        <input type="text" id="klmail" name="klmail" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+<br>
+
+          <br>
+    <div class="control-group">
+      <!-- gender -->
+
+      <div class="controls">
+        <label class="control-label" for="gender">Gender</label>
+            <select class="form-control" name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Fe-Male</option>
+            </select>
+      </div>
+    </div>
+<br>
+        <div class="control-group">
+      <!-- phonenumber -->
+      <label class="control-label" for="phonenumber">Phone Number</label>
+      <div class="controls">
+        <input type="text" id="phonenumber" name="phonenumber" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+<br>
+
+            <br>
+    <div class="control-group">
+      <!-- Branches -->
+
+      <div class="controls">
+        <label class="control-label" for="branch">Branch</label>
+            <select class="form-control" name="branch" id="branch">
+                <option value="cseh">CSE-H</option>
+                <option value="cser">CSE-R</option>
+                <option value="aids">AI&DS</option>
+                <option value="csit">CSE & IT</option>
+                <option value="civil">CIVIL</option>
+                <option value="iot">IOT</option>
+                <option value="ece">ECE</option>
+                <option value="eee">EEE</option>
+                <option value="mech">MECHANICAL</option>
+                <option value="bba">BBA</option>
+                <option value="bca">BCA</option>
+                <option value="mba">MBA</option>
+                <option value="mca">MCA</option>
+                <option value="bt">Bio-Tech</option>
+            </select>
+      </div>
+    </div>
+<br>
+
+
+      <br>
+    <div class="control-group">
+      <!-- Comments-->
+      <label class="control-label" for="Comments">Comments</label>
+      <div class="controls">
+        <textarea id="Comments" name="Comments" required></textarea>
+      </div>
+    </div>
+<br>
+
+
+
+<br>
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+  </div>
+</div>
+</div>
+<br><br>
+
+{% endblock %}
+</body>
+</html>

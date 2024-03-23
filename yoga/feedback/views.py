@@ -7,8 +7,12 @@ def feed(request):
 def feedbacksave(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        email = request.POST.get('klmail')
-        Comments = request.POST.get('Comments')
-        Feedback.objects.create(name=name, email=email, Comments=Comments)
+        id=request.POST.get('id')
+        email = request.POST.get('email')
+        gender=request.POST.get('gender')
+        phonenumber=request.POST.get('phonenumber')
+        branch=request.POST.get('branch')
+        Comments = request.POST.get('comments')
+        Feed.objects.create(name=name, email=email, gender=gender,phonenumber=phonenumber, branch=branch,iid=id,Comments=Comments)
         return render(request,'homepage.html')
     return render(request, 'feedback.html')
