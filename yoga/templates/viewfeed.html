@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feed Back</title>
+</head>
+<body>
+{% block body %}
+<h1>Feed Back</h1>
+<table border="2">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Id</th>
+    <th>KL Mail</th>
+    <th>Gender</th>
+    <th>Mobile Number</th>
+    <th>Branch</th>
+    <th>Comments</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_application in job_details_list %}
+  <tr>
+    <td>{{ job_application.name }}</td>
+    <td>{{ job_application.iid }}</td>
+    <td>{{ job_application.email }}</td>
+    <td>{{ job_application.gender }}</td>
+    <td>{{ job_application.phonenumber }}</td>
+    <td>{{ job_application.branch }}</td>
+    <td>{{ job_application.Comments }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<style>
+  table, th, td {
+    border: 2px solid black;
+  }
+</style>
+{% endblock %}
+</body>
+</html>

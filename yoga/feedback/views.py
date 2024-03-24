@@ -16,3 +16,7 @@ def feedbacksave(request):
         Feed.objects.create(name=name, email=email, gender=gender,phonenumber=phonenumber, branch=branch,iid=id,Comments=Comments)
         return render(request,'homepage.html')
     return render(request, 'feedback.html')
+
+def viewfeed(request):
+    job_details_list = Feed.objects.all()
+    return render(request, 'viewfeed.html', {'job_details_list': job_details_list})
