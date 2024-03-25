@@ -4,6 +4,8 @@ from .models import *
 def feed(request):
     return render(request, 'feedback.html')
 
+import datetime
+import pytz
 def feedbacksave(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -13,7 +15,12 @@ def feedbacksave(request):
         phonenumber=request.POST.get('phonenumber')
         branch=request.POST.get('branch')
         Comments = request.POST.get('comments')
-        Feed.objects.create(name=name, email=email, gender=gender,phonenumber=phonenumber, branch=branch,iid=id,Comments=Comments)
+        #India Time
+        utc_now = datetime.datetime.utcnow()
+        india_timezone = pytz.timezone('Asia/Kolkata')
+        india_time = utc_now.replace(tzinfo=pytz.utc).astimezone(india_timezone)
+        india_date = india_time.date()
+        Feed.objects.create(name=name, email=email, gender=gender,phonenumber=phonenumber, branch=branch,iid=id,Comments=Comments,date=india_date)
         return render(request,'homepage.html')
     return render(request, 'feedback.html')
 

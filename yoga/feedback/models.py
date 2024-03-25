@@ -29,5 +29,6 @@ class Feed(models.Model):
     phonenumber=models.CharField(max_length=100)
     branch=models.CharField(max_length=100,null=True)
     Comments=models.CharField(max_length=100,null=True)
+    date=models.DateField()
     class Meta:
         db_table="Feed" #To show the table name to the user
