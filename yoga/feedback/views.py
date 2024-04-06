@@ -27,3 +27,5 @@ def feedbacksave(request):
 def viewfeed(request):
     job_details_list = Feed.objects.all()
     return render(request, 'viewfeed.html', {'job_details_list': job_details_list})
+
+

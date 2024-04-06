@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render
+
 
 
 def home(request):
@@ -6,3 +8,8 @@ def home(request):
 
 def about(request):
     return render(request,'aboutus.html')
+
+def login(request):
+    return render(request,'login.html')
+
+

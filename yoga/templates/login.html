@@ -1,0 +1,99 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        .form-container {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .title-container {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            padding: 20px 0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button-container:hover {
+            background-color: #3E8E41;
+        }
+
+        .powered-container {
+            text-align: center;
+            font-size: 12px;
+            color: #333;
+            padding: 10px 0;
+        }
+
+        /* Avatar styles */
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+.avatar-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: avatar 2s linear infinite;
+        }
+
+        @keyframes avatar {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+{% block body%}
+    <div class="form-container">
+        <div class="avatar-container">
+            <img class="avatar-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSby52oNa0E6rcdzl7zFW_x8_8f3SUYZJ3TGdPQg2JqcA&s" Avatar">
+        </div>
+        <div class="title-container">CORE LOGIN</div>
+        <form  method="POST">
+            {% csrf_token %}
+            <input type="text" class="form-input" id="name" name="name" placeholder="Username" required>
+            <input type="text" class="form-input" id="password" name="password" placeholder="Password" required>
+
+            <button class="button-container" type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

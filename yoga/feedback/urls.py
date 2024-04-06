@@ -8,4 +8,6 @@ urlpatterns = [
     path('feedbacksave/',feedbacksave,name='feedbacksave'),
     path('viewfeed/',viewfeed,name='viewfeed'),
 
+
+
 ]

@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
     path('aboutus/',about,name='aboutus'),
+    path('login/',login,name='login'),
     path('feed/',include('feedback.urls')),
 
 ]
