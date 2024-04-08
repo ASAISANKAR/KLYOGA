@@ -7,4 +7,5 @@ urlpatterns = [
   path('log',core,name='core'),
   path('signkaro',signup,name='signup'),
   path('profile/',profile,name='profile'),
+  path('update/',updateprofile,name='updateprofile'),
 ]

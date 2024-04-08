@@ -42,11 +42,16 @@ def signup(request):
         username=request.POST['username']
         pass1=request.POST['password']
         if User.objects.filter(username=username).exists():
-            return HttpResponse("username already exist")
+            if Profile.objects.filter(username=username).exists():
+                return HttpResponse("username already exist")
+            else:
+                Profile.objects.create(username=username)
+
         else:
             user=User.objects.create_user(username=username,password=pass1)
             user.save()
             Signup.objects.create(username=username,password=pass1)
+            Profile.objects.create(username=username)
             return HttpResponse("Account Created Successfully")
 
     return render(request,'signup.html')
@@ -55,5 +60,35 @@ def signup(request):
 
 
 def profile(request):
+    if Profile.objects.filter(username=request.user).exists():
+        coredetails = Profile.objects.get(username=request.user)
+        return render(request, 'profile.html', {'coredetails':coredetails})
+    else:
+        return HttpResponse("Profile Does not Exist")
 
-    return render(request,'profile.html')
+def updateprofile(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phonenumber = request.POST['phonenumber']
+        idnumber = request.POST['idnumber']
+        branch = request.POST['branch']
+        college = request.POST['college']
+        image = request.POST['image']
+
+        userprofile = Profile.objects.get(username=request.user)
+
+        userprofile.name = name
+        userprofile.email = email
+        userprofile.phonenumber = phonenumber
+        userprofile.idnumber = idnumber
+        userprofile.branch = branch
+        userprofile.college = college
+        userprofile.image = image
+
+        # Save the updated profile
+        userprofile.save()
+        return redirect('profile')
+    return redirect(profile)
+
+

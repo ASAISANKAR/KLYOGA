@@ -17,11 +17,77 @@
 
 <div align="center">
         <h1>Welcome to Profile Page!!</h1>
+    <div class="row">
+
+        <div class="col">
+            <div class="card" style="width: 26rem;">
+  <div class="card-body" >
+    <img src="{{ coredetails.image}}" alt="..."/>
+      <br><br>
+
+    <h1>{{coredetails.name}}</h1>
+      <h1>{{coredetails.idnumber}}</h1>
+       <h1>{{coredetails.phonenumber}}</h1>
+      <h1>{{coredetails.email}}</h1>
+       <h1>{{coredetails.branch}}</h1>
+       <h1>{{coredetails.college}}</h1>
+
+  </div>
+</div>
+        </div>
+
+        <!-- right-->
+<div class="col-8">
+    <div class="card" style="width: 60rem;">
+        <div class="card-body">
+            <h5 class="card-title" align="left">Edit your details</h5>
+            <form method="post" action="{% url 'updateprofile' %}">
+                {% csrf_token %}
+
+                <div class="form-group" align="left">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" name="name" value="{{ coredetails.name }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" class="form-control" name="email" value="{{ coredetails.email }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="phonenumber" class="form-label">Mobile Number:</label>
+                    <input type="text" class="form-control" name="phonenumber" value="{{ coredetails.phonenumber }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="idnumber" class="form-label">Id Number:</label>
+                    <input type="text" class="form-control" name="idnumber" value="{{ coredetails.idnumber }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="branch" class="form-label">Branch:</label>
+                    <input type="text" class="form-control" name="branch" value="{{ coredetails.branch }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="college" class="form-label">College:</label>
+                    <input type="text" class="form-control" name="college" value="{{ coredetails.college }}" required>
+                </div>
+
+                <div class="form-group" align="left">
+                    <label for="image" class="form-label">Image:</label>
+                    <input type="text" class="form-control" name="image" value="{{ coredetails.image }}" required>
+                </div>
+<br>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 
-
-
+    </div>
+</div>
 
 {% endblock %}
 </body>
