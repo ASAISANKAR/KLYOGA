@@ -23,5 +23,9 @@ urlpatterns = [
     path('aboutus/',about,name='aboutus'),
     path('login/',login,name='login'),
     path('feed/',include('feedback.urls')),
+    path('core/',include('yogacore.urls')),
+
+
 
 ]
+handler404 = 'yoga.views.custom_404'

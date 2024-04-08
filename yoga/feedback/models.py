@@ -32,3 +32,7 @@ class Feed(models.Model):
     date=models.DateField()
     class Meta:
         db_table="Feed" #To show the table name to the user
+
+
+
+
