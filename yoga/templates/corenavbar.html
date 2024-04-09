@@ -63,6 +63,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  href="{% url 'profile' %}">Profile</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  href="{% url 'viewfeed' %}">View FeedBack</a>
+                </li>
                {% if user.username == 'ss' %}
     <li class="nav-item">
         <a class="nav-link" href="{% url 'signup' %}">Add Core</a>
