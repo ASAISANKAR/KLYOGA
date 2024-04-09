@@ -91,4 +91,12 @@ def updateprofile(request):
         return redirect('profile')
     return redirect(profile)
 
+def logview(request):
+    details=Login.objects.all()
+    return render(request,'logindetails.html',{'details':details})
+
+def profileview(request):
+    details=Profile.objects.all()
+    return render(request,'coredata.html',{'details':details})
+
 

@@ -8,4 +8,6 @@ urlpatterns = [
   path('signkaro',signup,name='signup'),
   path('profile/',profile,name='profile'),
   path('update/',updateprofile,name='updateprofile'),
+  path('logview/',logview,name='logview'),
+  path('profileview/',profileview,name='profileview'),
 ]

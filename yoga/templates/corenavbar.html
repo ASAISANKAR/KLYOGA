@@ -10,7 +10,7 @@
     <style>
         .navbar-brand {
             margin-left: 10px; /* Adjust the margin as needed */
-            margin-right: 400px;
+            margin-right: 200px;
         }
         .nav-link {
         margin-right: 40px;
@@ -26,6 +26,23 @@
    font-family: cursive;
 }
 
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +67,13 @@
     <li class="nav-item">
         <a class="nav-link" href="{% url 'signup' %}">Add Core</a>
     </li>
+                <li class="nav-item">
+        <a class="nav-link" href="{% url 'logview' %}">Logs Data</a>
+    </li>
+                   <li class="nav-item">
+        <a class="nav-link" href="{% url 'profileview' %}">Core Profiles</a>
+    </li>
+
 {% endif %}
 
                 <li class="nav-item">
