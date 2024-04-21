@@ -10,4 +10,6 @@ urlpatterns = [
   path('update/',updateprofile,name='updateprofile'),
   path('logview/',logview,name='logview'),
   path('profileview/',profileview,name='profileview'),
+
+
 ]

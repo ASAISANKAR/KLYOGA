@@ -19,6 +19,9 @@ def core(request):
     if request.method=='POST':
         username=request.POST['name']
         pass1=request.POST['password']
+        details = User.objects.get(username=username)
+        print(details.password)
+
         user=auth.authenticate(username=username,password=pass1)
         if user is not None:
             auth.login(request,user)
@@ -98,5 +101,6 @@ def logview(request):
 def profileview(request):
     details=Profile.objects.all()
     return render(request,'coredata.html',{'details':details})
+
 
 

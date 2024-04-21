@@ -43,6 +43,13 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .profile-img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed */
+    border-radius: 50%; /* This creates a circular shape */
+    object-fit: cover; /* Ensures the image covers the entire space */
+}
     </style>
 </head>
 <body>
@@ -63,10 +70,17 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  href="{% url 'profile' %}">Profile</a>
                 </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  href="{% url 'viewfeed' %}">View FeedBack</a>
                 </li>
                {% if user.username == 'ss' %}
+                 <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Core Details
+          </a>
+                <ul class="dropdown-menu">
     <li class="nav-item">
         <a class="nav-link" href="{% url 'signup' %}">Add Core</a>
     </li>
@@ -76,7 +90,8 @@
                    <li class="nav-item">
         <a class="nav-link" href="{% url 'profileview' %}">Core Profiles</a>
     </li>
-
+ </ul>
+                 </li>
 {% endif %}
 
                 <li class="nav-item">
