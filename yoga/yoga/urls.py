@@ -22,6 +22,7 @@ urlpatterns = [
     path('',home,name='home'),
     path('aboutus/',about,name='aboutus'),
     path('login/',login,name='login'),
+    path('aechievements/',aech,name='aech'),
     path('feed/',include('feedback.urls')),
     path('core/',include('yogacore.urls')),
 

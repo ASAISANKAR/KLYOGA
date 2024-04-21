@@ -13,6 +13,10 @@ def about(request):
 def login(request):
     return render(request, 'login.html')
 
+def aech(request):
+    vid1={'video': '/static/images/video.mp4'}
+    return render(request, 'aech.html',vid1)
+
 
 
 def custom_404(request, exception):
